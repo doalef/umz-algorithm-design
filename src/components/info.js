@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Row, Col } from "antd";
 import Highlight from "react-highlight";
 import "highlight.js/styles/a11y-dark.css";
-
+var beautify = require("js-beautify").js;
 export default class AlgorithmInfo extends React.Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +18,9 @@ export default class AlgorithmInfo extends React.Component {
 					</Col>
 					<Col md={12}>
 						<Highlight language="javascript">
-							{this.props.function.toString()}
+							{beautify(this.props.function.toString(), {
+								indent_size: 2,
+							})}
 						</Highlight>
 					</Col>
 				</Row>

@@ -104,7 +104,7 @@ class App extends React.Component {
 							{this.renderContainer()}
 						</Layout.Content>
 						<Layout.Footer style={{ textAlign: "center" }}>
-							Ant Design ©2018 Created by Ant UED
+							Developed in quarantine by Amirali Ahmadi :)
 						</Layout.Footer>
 					</Layout>
 				</Layout>
