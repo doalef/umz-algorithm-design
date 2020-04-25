@@ -1,10 +1,16 @@
 import React from "react";
 import { Row, Col, Card, Input, Form, Button, message } from "antd";
 import AlgorithmInfo from "../../components/info";
-import { insertion } from "../../lib/sortings";
+import { merge } from "../../lib/sortings";
 import { isArray } from "validate.js";
 import Chart from "../../components/chart";
-const details = `Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. The analogy can be understood from the style we arrange a deck of cards. This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.`;
+const details = `Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The major portion of the algorithm is given two sorted arrays, we have to merge them into a single sorted array. There is something known as the Two Finger Algorithm that helps us merge two sorted arrays together. Using this subroutine and calling the merge sort function on the array halves recursively will give us the final sorted array we are looking for.
+
+Since this is a recursion based algorithm, we have a recurrence relation for it. A recurrence relation is simply a way of representing a problem in terms of its subproblems.
+
+T(n) = 2 * T(n / 2) + O(n)
+
+Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step.`;
 const formItemLayout = {
 	labelCol: {
 		xs: { span: 4 },
@@ -15,7 +21,7 @@ const formItemLayout = {
 		sm: { span: 20 },
 	},
 };
-export default class InsertionSort extends React.Component {
+export default class MergeSort extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -27,7 +33,7 @@ export default class InsertionSort extends React.Component {
 
 	showResults(payload) {
 		let t1 = performance.now();
-		let result = insertion(payload);
+		let result = merge(payload);
 		let t2 = performance.now();
 		let times = this.state.times;
 		times.push((t2 - t1).toFixed(4));
@@ -41,6 +47,7 @@ export default class InsertionSort extends React.Component {
 				return message.error("Input is invalid, should be an array");
 			this.showResults(res);
 		} catch (error) {
+			console.log(error);
 			message.error("Input is invalid, should be an array");
 		}
 	}
@@ -50,9 +57,7 @@ export default class InsertionSort extends React.Component {
 			<div>
 				<Row justify="space-between" style={{ paddingBottom: 24 }}>
 					<Col md={11}>
-						<Card
-							title={"Insertion Sort - Execute"}
-							style={{ marginTop: 16 }}>
+						<Card title={"Merge Sort - Execute"} style={{ marginTop: 16 }}>
 							<p>
 								Enter your input data down in the field. (data
 								must be an array)
@@ -111,7 +116,7 @@ export default class InsertionSort extends React.Component {
 						<Chart times={this.state.times} />
 					</Col>
 					<Col xs={24}>
-						<AlgorithmInfo details={details} function={insertion} />
+						<AlgorithmInfo details={details} function={merge} />
 					</Col>
 				</Row>
 			</div>

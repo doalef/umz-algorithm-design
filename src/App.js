@@ -3,6 +3,7 @@ import { Menu, Layout } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import items from "./_nav";
 import InsertionSort from "./containers/sortings/insertion";
+import MergeSort from "./containers/sortings/merge";
 
 class App extends React.Component {
 	constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
 		this.state = {
 			collapsed: false,
 			broken: false,
+			key: "insertion",
 		};
 	}
 
@@ -56,7 +58,14 @@ class App extends React.Component {
 	}
 
 	renderContainer() {
-		return <InsertionSort />;
+		switch (this.state.key) {
+			case "insertion":
+				return <InsertionSort />;
+			case "merge":
+				return <MergeSort />;
+			default:
+				return <InsertionSort />;
+		}
 	}
 
 	render() {
@@ -74,6 +83,7 @@ class App extends React.Component {
 						collapsible
 						collapsed={this.state.collapsed}>
 						<Menu
+							onSelect={({ key }) => this.setState({ key })}
 							defaultSelectedKeys={["insertion"]}
 							defaultOpenKeys={["sortings"]}
 							style={{ height: "100vh" }}

@@ -11,6 +11,40 @@ function insertion(nums) {
 	return nums;
 }
 
+function MergeSort(arr) {
+	// Merges 2 sorted arrays
+	function merge(left, right) {
+		let result = [],
+			i = 0,
+			j = 0;
+
+		while (i < left.length && j < right.length) {
+			if (left[i] < right[j]) {
+				result.push(left[i++]);
+			} else {
+				result.push(right[j++]);
+			}
+		}
+		return result.concat(left.slice(i)).concat(right.slice(j));
+	}
+	let len = arr.length,
+		middle,
+		left,
+		right;
+
+	if (len < 2) {
+		return arr;
+	}
+
+	middle = Math.floor(len / 2);
+
+	left = arr.slice(0, middle);
+	right = arr.slice(middle);
+
+	return merge(MergeSort(left), MergeSort(right));
+}
+
 module.exports = {
 	insertion,
+	merge: MergeSort,
 };

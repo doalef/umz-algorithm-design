@@ -11,6 +11,10 @@ export default [
 				title: "Insertion Sort",
 				key: "insertion",
 			},
+			{
+				title: "Merge Sort",
+				key: "merge",
+			},
 		],
 	},
 ];
