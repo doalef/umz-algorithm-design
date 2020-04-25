@@ -4,7 +4,7 @@ import AlgorithmInfo from "../../components/info";
 import { insertion } from "../../lib/sortings";
 import { isArray } from "validate.js";
 import Chart from "../../components/chart";
-const details = `Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.`;
+const details = `Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. The analogy can be understood from the style we arrange a deck of cards. This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.`;
 const formItemLayout = {
 	labelCol: {
 		xs: { span: 4 },
