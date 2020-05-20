@@ -1,5 +1,5 @@
 import React from "react";
-import { SortAscendingOutlined } from "@ant-design/icons";
+import { SortAscendingOutlined, SelectOutlined } from "@ant-design/icons";
 
 export default [
 	{
@@ -16,5 +16,16 @@ export default [
 				key: "merge",
 			},
 		],
+	},
+	{
+		title: "Selection",
+		icon: <SelectOutlined />,
+		key: "selection",
+		items: [
+			{
+				title: 'Floyd-Rivest',
+				key: 'floyd-rivest'
+			}
+		]
 	},
 ];

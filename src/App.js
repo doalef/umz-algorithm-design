@@ -4,6 +4,12 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import items from "./_nav";
 import InsertionSort from "./containers/sortings/insertion";
 import MergeSort from "./containers/sortings/merge";
+import FloydRivest from "./containers/selection/floydRivest";
+
+// import quickselect from "./lib/selection";
+
+// var arr = [7, 3, 4, 0, 1, 1,3, 6];
+// console.log(quickselect(arr, 7));
 
 class App extends React.Component {
 	constructor(props) {
@@ -63,6 +69,8 @@ class App extends React.Component {
 				return <InsertionSort />;
 			case "merge":
 				return <MergeSort />;
+			case "floyd-rivest":
+				return <FloydRivest />;
 			default:
 				return <InsertionSort />;
 		}
