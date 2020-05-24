@@ -25,6 +25,10 @@ export default [
 			{
 				title: 'Floyd-Rivest',
 				key: 'floyd-rivest'
+			},
+			{
+				title: 'Median of Medians',
+				key: 'median'
 			}
 		]
 	},

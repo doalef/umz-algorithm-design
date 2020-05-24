@@ -5,6 +5,7 @@ import items from "./_nav";
 import InsertionSort from "./containers/sortings/insertion";
 import MergeSort from "./containers/sortings/merge";
 import FloydRivest from "./containers/selection/floydRivest";
+import Median from "./containers/selection/median";
 
 // import quickselect from "./lib/selection";
 
@@ -71,6 +72,8 @@ class App extends React.Component {
 				return <MergeSort />;
 			case "floyd-rivest":
 				return <FloydRivest />;
+			case "median":
+				return <Median />;
 			default:
 				return <InsertionSort />;
 		}
