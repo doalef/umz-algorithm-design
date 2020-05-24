@@ -8,9 +8,6 @@ export function frSelection(
 	right = array.length - 1
 ) {
 	while (right > left) {
-		// Use select recursively to sample a smaller set of size s.
-		// The arbitrary constants 600 and 0.5 are used in the original
-		// version to minimize execution time
 		if (right - left > 600) {
 			const n = right - left + 1;
 			const m = k - left + 1;
