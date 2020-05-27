@@ -6,6 +6,7 @@ import InsertionSort from "./containers/sortings/insertion";
 import MergeSort from "./containers/sortings/merge";
 import FloydRivest from "./containers/selection/floydRivest";
 import Median from "./containers/selection/median";
+import DFS from "./containers/graphs/dfs";
 
 // import quickselect from "./lib/selection";
 
@@ -74,6 +75,8 @@ class App extends React.Component {
 				return <FloydRivest />;
 			case "median":
 				return <Median />;
+			case "dfs":
+				return <DFS />;
 			default:
 				return <InsertionSort />;
 		}

@@ -78,7 +78,7 @@ export function mSelection(arr, k) {
 	}
 
 	function selectIdx(arr, left, right, k) {
-		if (left == right) {
+		if (left === right) {
 			return arr[left];
 		}
 		var dest = left + k;
@@ -88,7 +88,7 @@ export function mSelection(arr, k) {
 					? Math.floor(Math.random() * (right - left + 1)) + left
 					: medianOfMedians(arr, left, right);
 			pivotIndex = partition(arr, left, right, pivotIndex);
-			if (pivotIndex == dest) return pivotIndex;
+			if (pivotIndex === dest) return pivotIndex;
 			else if (pivotIndex < dest) {
 				left = pivotIndex + 1;
 			} else {
@@ -122,7 +122,7 @@ export function mSelection(arr, k) {
 			Math.floor(numMedians / 2)
 		);
 	}
-	if (!Array.isArray(arr) || arr.length == 0 || arr.length - 1 < k) {
+	if (!Array.isArray(arr) || arr.length === 0 || arr.length - 1 < k) {
 		return;
 	}
 	var idx = selectIdx(arr, 0, arr.length - 1, k);

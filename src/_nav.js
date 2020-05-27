@@ -1,5 +1,9 @@
 import React from "react";
-import { SortAscendingOutlined, SelectOutlined } from "@ant-design/icons";
+import {
+	SortAscendingOutlined,
+	SelectOutlined,
+	BranchesOutlined,
+} from "@ant-design/icons";
 
 export default [
 	{
@@ -23,13 +27,24 @@ export default [
 		key: "selection",
 		items: [
 			{
-				title: 'Floyd-Rivest',
-				key: 'floyd-rivest'
+				title: "Floyd-Rivest",
+				key: "floyd-rivest",
 			},
 			{
-				title: 'Median of Medians',
-				key: 'median'
-			}
-		]
+				title: "Median of Medians",
+				key: "median",
+			},
+		],
+	},
+	{
+		title: "Graphs",
+		icon: <BranchesOutlined />,
+		key: "graphs",
+		items: [
+			{
+				title: "DFS",
+				key: "dfs",
+			},
+		],
 	},
 ];
