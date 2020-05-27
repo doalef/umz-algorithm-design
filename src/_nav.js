@@ -49,6 +49,10 @@ export default [
 				title: "BFS",
 				key: "bfs",
 			},
+			{
+				title: "Topological",
+				key: "topological",
+			},
 		],
 	},
 ];

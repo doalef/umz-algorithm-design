@@ -46,10 +46,21 @@ export default class Graph extends React.Component {
 					stroke: "#5B8FF9",
 				},
 			},
-			defaultEdge: {
-				size: 1,
-				color: "#e2e2e2",
-			},
+			defaultEdge: this.props.directed
+				? {
+						size: 1,
+						color: "#e2e2e2",
+						style: {
+							endArrow: {
+								path: "M 0,0 L 8,4 L 8,-4 Z",
+								fill: "#e2e2e2",
+							},
+						},
+				  }
+				: {
+						size: 1,
+						color: "#e2e2e2",
+				  },
 		});
 		this.Graph.data(this.state.data);
 		this.Graph.render();
