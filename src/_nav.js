@@ -45,6 +45,10 @@ export default [
 				title: "DFS",
 				key: "dfs",
 			},
+			{
+				title: "BFS",
+				key: "bfs",
+			},
 		],
 	},
 ];
